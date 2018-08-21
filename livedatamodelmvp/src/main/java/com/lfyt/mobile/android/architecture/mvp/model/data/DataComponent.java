@@ -10,20 +10,19 @@ import io.realm.Realm;
  * Component need to create the live data model
  * with a more simple setup
  */
-public class LiveDataModelComponent {
+public class DataComponent {
 
-	private final LiveDataModelStateAPI dataStateAPI;
+	private final DataStateAPI dataStateAPI;
 	private final Realm database;
 	private final Application application;
 
-	@Inject
-	public LiveDataModelComponent(LiveDataModelStateAPI dataStateAPI, Realm database, Application application) {
+	public DataComponent(DataStateAPI dataStateAPI, Realm database, Application application) {
 		this.dataStateAPI = dataStateAPI;
 		this.database = database;
 		this.application =  application;
 	}
 
-	public LiveDataModelStateAPI getDataStateAPI() {
+	public DataStateAPI getDataStateAPI() {
 		return dataStateAPI;
 	}
 

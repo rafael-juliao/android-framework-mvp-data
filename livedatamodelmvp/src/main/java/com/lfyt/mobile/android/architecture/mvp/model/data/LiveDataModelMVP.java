@@ -24,7 +24,7 @@ public abstract class LiveDataModelMVP<T extends RealmModel> extends LiveModelMV
 	 * Constructor of data model
 	 * @param liveDataModelComponent
 	 */
-	protected LiveDataModelMVP(LiveDataModelComponent liveDataModelComponent){
+	protected LiveDataModelMVP(DataComponent liveDataModelComponent){
 		super(liveDataModelComponent.getApplication());
 		setupLiveDataModel(liveDataModelComponent);
 	}
@@ -43,7 +43,7 @@ public abstract class LiveDataModelMVP<T extends RealmModel> extends LiveModelMV
 	/**
 	 * The data manager, that manages the auto-saving
 	 */
-	private LiveDataModelComponent liveDataModelComponent;
+	private DataComponent liveDataModelComponent;
 
 
 
@@ -51,7 +51,7 @@ public abstract class LiveDataModelMVP<T extends RealmModel> extends LiveModelMV
 	///////////////////////////////////////////////////////////////////////////
 	// Setup Data Auto Management
 	///////////////////////////////////////////////////////////////////////////
-	private void setupLiveDataModel(LiveDataModelComponent liveDataModelComponent) {
+	private void setupLiveDataModel(DataComponent liveDataModelComponent) {
 
 		//Set instance of data manager
 		this.liveDataModelComponent = liveDataModelComponent;
@@ -63,7 +63,7 @@ public abstract class LiveDataModelMVP<T extends RealmModel> extends LiveModelMV
 		liveDataModelComponent.getDataStateAPI().subscribe(new Object(){
 
 			@Subscribe
-			public void onSaveStateEvent(LiveDataModelStateAPI.SaveDataEvent event){
+			public void onSaveStateEvent(DataStateAPI.SaveDataEvent event){
 				saveData();
 			}
 

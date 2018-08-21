@@ -6,19 +6,9 @@ import com.lfyt.mobile.android.livemodel.Event;
 import com.lfyt.mobile.android.livemodel.LiveModel;
 import com.squareup.otto.Subscribe;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
+public abstract class DataStateAPI extends LiveModel {
 
-@Singleton
-public class LiveDataModelStateAPI extends LiveModel {
-
-
-	private final ApplicationLifecycleAPI applicationStateAPI;
-
-	@Inject
-	public LiveDataModelStateAPI(ApplicationLifecycleAPI applicationStateAPI/*, WebServiceStateAPI webServiceStateAPI*/) {
-		this.applicationStateAPI = applicationStateAPI;
-
+	public DataStateAPI(ApplicationLifecycleAPI applicationStateAPI) {
 		applicationStateAPI.subscribe(mApplicationStateModelSubscriptionCode);
 		/*webServiceStateAPI.subscribe(mWebServiceStateModelSubscriptionCode);*/
 	}
