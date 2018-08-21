@@ -3,7 +3,7 @@ package com.lfyt.mobile.android.architecture.mvp.model.data;
 import android.support.annotation.CallSuper;
 
 import com.lfyt.mobile.android.frameworkmvp.archtecture.L;
-import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.model.LiveModelMVP;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.mvp.model.Model;
 import com.squareup.otto.Subscribe;
 
 import io.realm.Realm;
@@ -11,13 +11,12 @@ import io.realm.RealmModel;
 
 
 /**
- * Live Data Model is an extension of @{@link LiveModelMVP}
  * that can:
  * 		*post event to subscribers
  * 		*inject its dependencies and subscribe to it
  * 		*auto manage its data
 */
-public abstract class DataModel<T extends RealmModel> extends LiveModelMVP {
+public abstract class DataModel<T extends RealmModel> extends Model {
 
 
 	/**
