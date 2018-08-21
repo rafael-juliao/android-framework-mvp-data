@@ -17,14 +17,14 @@ import io.realm.RealmModel;
  * 		*inject its dependencies and subscribe to it
  * 		*auto manage its data
 */
-public abstract class LiveDataModelMVP<T extends RealmModel> extends LiveModelMVP {
+public abstract class DataModel<T extends RealmModel> extends LiveModelMVP {
 
 
 	/**
 	 * Constructor of data model
 	 * @param liveDataModelComponent
 	 */
-	protected LiveDataModelMVP(DataComponent liveDataModelComponent){
+	protected DataModel(DataComponent liveDataModelComponent){
 		super(liveDataModelComponent.getApplication());
 		setupLiveDataModel(liveDataModelComponent);
 	}
