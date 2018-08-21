@@ -6,7 +6,7 @@ import com.lfyt.mobile.android.livemodel.Event;
 import com.lfyt.mobile.android.livemodel.LiveModel;
 import com.squareup.otto.Subscribe;
 
-public abstract class DataStateAPI extends LiveModel {
+public class DataStateAPI extends LiveModel {
 
 	public DataStateAPI(ApplicationLifecycleAPI applicationStateAPI) {
 		applicationStateAPI.subscribe(mApplicationStateModelSubscriptionCode);
