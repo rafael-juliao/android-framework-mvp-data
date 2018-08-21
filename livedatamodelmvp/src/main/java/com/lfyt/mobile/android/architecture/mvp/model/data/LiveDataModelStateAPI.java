@@ -1,8 +1,7 @@
 package com.lfyt.mobile.android.architecture.mvp.model.data;
 
 import com.lfyt.mobile.android.frameworkmvp.archtecture.L;
-import com.lfyt.mobile.android.frameworkmvp.models.application.ApplicationLifecycleAPI;
-import com.lfyt.mobile.android.frameworkmvp.models.framework.webservice.WebServiceStateAPI;
+import com.lfyt.mobile.android.frameworkmvp.archtecture.application.ApplicationLifecycleAPI;
 import com.lfyt.mobile.android.livemodel.Event;
 import com.lfyt.mobile.android.livemodel.LiveModel;
 import com.squareup.otto.Subscribe;
@@ -17,11 +16,11 @@ public class LiveDataModelStateAPI extends LiveModel {
 	private final ApplicationLifecycleAPI applicationStateAPI;
 
 	@Inject
-	public LiveDataModelStateAPI(ApplicationLifecycleAPI applicationStateAPI, WebServiceStateAPI webServiceStateAPI) {
+	public LiveDataModelStateAPI(ApplicationLifecycleAPI applicationStateAPI/*, WebServiceStateAPI webServiceStateAPI*/) {
 		this.applicationStateAPI = applicationStateAPI;
 
 		applicationStateAPI.subscribe(mApplicationStateModelSubscriptionCode);
-		webServiceStateAPI.subscribe(mWebServiceStateModelSubscriptionCode);
+		/*webServiceStateAPI.subscribe(mWebServiceStateModelSubscriptionCode);*/
 	}
 
 
@@ -65,6 +64,7 @@ public class LiveDataModelStateAPI extends LiveModel {
 
 
 	//Last Web Service Request Received
+	/*
 	private final Object mWebServiceStateModelSubscriptionCode = new Object(){
 
 		@Subscribe
@@ -74,6 +74,7 @@ public class LiveDataModelStateAPI extends LiveModel {
 			}
 		}
 	};
+	*/
 
 	private void onWebServiceFinishedRequests() {
 		L.D(this, "WebServiceAPI response AFTER Application STOP ~> SAVING STATE <~");
