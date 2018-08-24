@@ -21,11 +21,8 @@ public abstract class DataModel<T extends RealmModel> extends Model {
 
 	/**
 	 * Constructor of data model
-	 * @param liveDataModelComponent
 	 */
-	protected DataModel(DataComponent liveDataModelComponent){
-		super(liveDataModelComponent.getApplication());
-		setupLiveDataModel(liveDataModelComponent);
+	protected DataModel(){
 	}
 
 
@@ -50,7 +47,7 @@ public abstract class DataModel<T extends RealmModel> extends Model {
 	///////////////////////////////////////////////////////////////////////////
 	// Setup Data Auto Management
 	///////////////////////////////////////////////////////////////////////////
-	private void setupLiveDataModel(DataComponent liveDataModelComponent) {
+	protected void setupDataModel(DataComponent liveDataModelComponent) {
 
 		//Set instance of data manager
 		this.liveDataModelComponent = liveDataModelComponent;
